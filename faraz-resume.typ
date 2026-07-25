@@ -78,7 +78,7 @@
 
 Full-stack software engineer with 5 years building production web and mobile
 systems, from idea to scaling infrastructure. Co-founder and lead
-engineer of an edtech platform serving three shipped products. I architect reliable applications and design intuitive user experiences for a living. Primary Stack : React, Next, Node, Express, AWS, Supabase.
+engineer of an edtech platform serving three shipped products. I architect reliable applications and design intuitive user experiences for a living. Primary Stack: Typescript, React, Next, Node, Express, AWS, Supabase.
 
 // ============================================================
 // EXPERIENCE
@@ -106,7 +106,7 @@ engineer of an edtech platform serving three shipped products. I architect relia
 #entry[
   Full-Stack Developer
 ][
-  Agency - Contract
+  Contract
 ][
   Remote (USA)
 ][
