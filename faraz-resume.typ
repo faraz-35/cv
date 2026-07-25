@@ -77,10 +77,8 @@
 #heading("Summary")
 
 Full-stack software engineer with 5 years building production web and mobile
-systems end-to-end, from idea to owned infrastructure. Co-founder and lead
-engineer of an edtech platform serving three shipped products. Stack:
-Next.js / React, Node.js / NestJS, Postgres / DynamoDB, on AWS. Strongest at
-taking ambiguous requirements, shipping a working product, and designing intuitive user experiences.
+systems, from idea to scaling infrastructure. Co-founder and lead
+engineer of an edtech platform serving three shipped products. I architect reliable applications and design intuitive user experiences for a living. Primary Stack : React, Next, Node, Express, AWS, Supabase.
 
 // ============================================================
 // EXPERIENCE
@@ -199,12 +197,12 @@ taking ambiguous requirements, shipping a working product, and designing intuiti
 ]
 
 #skillrow("Languages:", [TypeScript, JavaScript, Python, SQL]) \
-#skillrow("Frontend:", [React, Next.js, React Native Expo, Tailwind CSS, Sass]) \
-#skillrow("Backend:", [Node.js, Express, GraphQL, AWS SAM]) \
+#skillrow("Frontend:", [React, Next.js, React Native Expo, Tailwind CSS, Tanstack Query]) \
+#skillrow("Backend:", [Node.js, Express, GraphQL, Supabase, AWS SAM]) \
 #skillrow("Databases:", [PostgreSQL, DynamoDB, Firebase, Prisma]) \
 #skillrow(
   "Cloud / DevOps:",
-  [AWS (EC2, Lambda, SAM, Step Functions, CloudWatch, Load Balancer, Auto Scaling), Terraform, CI/CD],
+  [AWS (EC2, Lambda, SAM, CloudWatch, Load Balancer, Auto Scaling), Terraform, CI/CD],
 ) \
 #skillrow("Practices:", [System design, infrastructure-as-code, monorepo architecture])
 
