@@ -87,13 +87,13 @@ engineer of an edtech platform serving three shipped products. I architect relia
 #heading("Experience")
 
 #entry[
-  Co-Founder & Lead Software Engineer
+  Lead Software Engineer
 ][
   Parhako
 ][
   Islamabad, Pakistan (Remote)
 ][
-  Aug 2024 - Present
+  Aug 2024 - Jul 2026
 ]
 
 #bullets(
@@ -126,7 +126,7 @@ engineer of an edtech platform serving three shipped products. I architect relia
 ][
   Remote (USA)
 ][
-  Jan 2023 - Aug 2023
+  Jan 2023 - Jun 2023
 ]
 
 #bullets(
