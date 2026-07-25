@@ -104,9 +104,25 @@ engineer of an edtech platform serving three shipped products. I architect relia
 )
 
 #entry[
+  Lead Full Stack Engineer
+][
+  Bitsmiths Studio
+][
+  Remote
+][
+  Aug 2025 - Oct 2025
+]
+
+#bullets(
+  [Delivered end-to-end features across the product surface using React, TypeScript, and Supabase.],
+  [Improved code quality and engineering workflows through review practices and tooling.],
+  [Advised junior engineers, raising team delivery and technical standards.],
+)
+
+#entry[
   Full-Stack Developer
 ][
-  Contract
+  TopDevSpace (Contract)
 ][
   Remote (USA)
 ][
@@ -138,16 +154,20 @@ engineer of an edtech platform serving three shipped products. I architect relia
 #entry[
   Freelance Web Developer
 ][
-  Fiverr / Upwork
+  Fiverr / Upwork / PeoplePerHour
 ][
   Remote
 ][
-  Mar 2020 - Jun 2022
+  Mar 2021 - Jun 2022
 ]
 
 #bullets(
-  [Delivered end-to-end client projects solo, including a business management app, an appointment app, and an EdTech learning app built with React / React Native.],
-  [Built a travel booking web app for Baydaar Experiences, covering frontend, backend, and deployment.],
+  [Business management web app — meeting scheduling and invoice management, built with React.],
+  [Appointment app for a skin-care clinic, end-to-end with React.],
+  [EdTech learning app for primary students, built with React / React Native.],
+  [Facebook Marketplace integration via the Facebook Graph API for a client marketplace product.],
+  [Travel booking web app for Baydaar Experiences — frontend, backend, and deployment.],
+  ["Rene Icons," an open-source icon library.],
 )
 
 // ============================================================
