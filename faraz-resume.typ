@@ -198,15 +198,15 @@ taking ambiguous requirements, shipping a working product, and designing intuiti
   #body
 ]
 
-#skillrow("Languages:", [TypeScript, JavaScript, C\#, SQL]) \
-#skillrow("Frontend:", [React, Next.js, React Native, Tailwind CSS, Sass]) \
-#skillrow("Backend:", [Node.js, NestJS, Express, GraphQL, REST APIs]) \
+#skillrow("Languages:", [TypeScript, JavaScript, Python, SQL]) \
+#skillrow("Frontend:", [React, Next.js, React Native Expo, Tailwind CSS, Sass]) \
+#skillrow("Backend:", [Node.js, Express, GraphQL, AWS SAM]) \
 #skillrow("Databases:", [PostgreSQL, DynamoDB, Firebase, Prisma]) \
 #skillrow(
   "Cloud / DevOps:",
   [AWS (EC2, Lambda, SAM, Step Functions, CloudWatch, Load Balancer, Auto Scaling), Terraform, CI/CD],
 ) \
-#skillrow("Practices:", [System design, infrastructure-as-code, monorepo architecture, code review])
+#skillrow("Practices:", [System design, infrastructure-as-code, monorepo architecture])
 
 // ============================================================
 // EDUCATION
