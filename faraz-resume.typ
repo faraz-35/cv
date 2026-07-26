@@ -76,9 +76,7 @@
 
 #heading("Summary")
 
-Full-stack software engineer with 5 years building production web and mobile
-systems, from idea to scaling infrastructure. Co-founder and lead
-engineer of an edtech platform serving three shipped products. I architect reliable applications and design intuitive user experiences for a living. Primary Stack: Typescript, React, Next, Node, Express, AWS, Supabase.
+Full-stack software engineer with 5 years building production web and mobile systems, from idea to owned infrastructure. Co-founded and led engineering at Parhako, an edtech platform of three shipped products serving 2,000+ students with 43,000+ AI-generated MCQs. Stack: TypeScript, React, Next.js, Node.js, Express, GraphQL, AWS, Supabase.
 
 // ============================================================
 // EXPERIENCE
@@ -97,10 +95,10 @@ engineer of an edtech platform serving three shipped products. I architect relia
 ]
 
 #bullets(
-  [Architected and built the Parhako learning platforms — three production apps (parhako.com, Parhako NET, Parhako MDCAT) used by Pakistani entrance-exam candidates, using Next.js + TypeScript frontend and Node.js backend.],
-  [Owned cloud infrastructure and deployment on AWS: EC2, Load Balancer, Auto Scaling Groups, and CI pipelines.],
-  [Built the MCQ filter builder — enabling candidates to construct fine-grained practice sets.],
-  [Created an agent driven AI content generation pipeline.],
+  [Co-founded Parhako and led a team of 3 engineers across three production apps (parhako.com, Parhako NET, Parhako MDCAT) now serving 2,000+ registered students, built with Next.js + TypeScript and Node.js on AWS.],
+  [Owned cloud infrastructure and deployment on AWS (EC2, Load Balancer, Auto Scaling Groups, CI/CD), migrating databases to Neon to cut hosting cost.],
+  [Built the MCQ filter builder and analytics engine over a bank of 43,000+ MCQs; candidates have taken 2,500+ mock tests and 50,000+ practice attempts.],
+  [Migrated content generation from a 2-stage Gemini API workflow (strategy then execution) to a 1-stage agent pipeline (Claude Code for NET, OpenCode + GLM-5.1 for MDCAT), producing 765+ structured artifacts (notes, MCQ tests, interactive React/SVG physics labs) — model quality improved enough to drop the intermediate planning step.],
 )
 
 #entry[
@@ -132,7 +130,6 @@ engineer of an edtech platform serving three shipped products. I architect relia
 #bullets(
   [Led migration of a legacy .NET application to AWS using Terraform, NestJS, AWS Lambda, Step Functions, DynamoDB, and CloudWatch — moving the workload off monolithic infrastructure onto event-driven serverless.],
   [Owned the backend rewrite in NestJS and wired Lambda/Step Functions orchestration, replacing fragile synchronous flows with resilient, observable pipelines.],
-  [Improved UX by streamlining interface interactions and applying usability principles across the migrated product surface.],
 )
 
 #entry[
@@ -218,8 +215,9 @@ engineer of an edtech platform serving three shipped products. I architect relia
 
 #skillrow("Languages:", [TypeScript, JavaScript, Python, SQL]) \
 #skillrow("Frontend:", [React, Next.js, React Native Expo, Tailwind CSS, Tanstack Query]) \
-#skillrow("Backend:", [Node.js, Express, GraphQL, Supabase, AWS SAM]) \
-#skillrow("Databases:", [PostgreSQL, DynamoDB, Firebase, Prisma]) \
+#skillrow("Backend:", [Node.js, NestJS, Express, GraphQL, Supabase, AWS SAM]) \
+#skillrow("Databases:", [PostgreSQL, DynamoDB, Firebase, Prisma, Neon]) \
+#skillrow("Testing:", [Cypress (end-to-end frontend), Playwright (scraping), Postman/contract schema validation]) \
 #skillrow(
   "Cloud / DevOps:",
   [AWS (EC2, Lambda, SAM, CloudWatch, Load Balancer, Auto Scaling), Terraform, CI/CD],
