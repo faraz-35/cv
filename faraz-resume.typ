@@ -76,7 +76,7 @@
 
 #heading("Summary")
 
-Full-stack software engineer with 5 years building production web and mobile systems, from idea to owned infrastructure. Co-founded and led engineering at Parhako, an edtech platform of three shipped products serving 2,000+ students with 43,000+ AI-generated MCQs. Stack: TypeScript, React, Next.js, Node.js, Express, GraphQL, AWS, Supabase.
+Full-stack software engineer with 5 years building production web and mobile systems, from idea to owned infrastructure. Co-founded and led engineering at Parhako, an edtech platform of three shipped products serving 2,000+ students. Stack: TypeScript, React, Next.js, Node.js, Express, GraphQL, AWS, Supabase.
 
 // ============================================================
 // EXPERIENCE
@@ -96,9 +96,9 @@ Full-stack software engineer with 5 years building production web and mobile sys
 
 #bullets(
   [Co-founded Parhako and led a team of 3 engineers across three production apps (parhako.com, Parhako NET, Parhako MDCAT) now serving 2,000+ registered students, built with Next.js + TypeScript and Node.js on AWS.],
-  [Owned cloud infrastructure and deployment on AWS (EC2, Load Balancer, Auto Scaling Groups, CI/CD), migrating databases to Neon to cut hosting cost.],
+  [Owned cloud infrastructure and deployment on AWS (EC2, Load Balancer, Auto Scaling Groups, CI/CD).],
   [Built the MCQ filter builder and analytics engine over a bank of 43,000+ MCQs; candidates have taken 2,500+ mock tests and 50,000+ practice attempts.],
-  [Migrated content generation from a 2-stage Gemini API workflow (strategy then execution) to a 1-stage agent pipeline (Claude Code for NET, OpenCode + GLM-5.1 for MDCAT), producing 765+ structured artifacts (notes, MCQ tests, interactive React/SVG physics labs) — model quality improved enough to drop the intermediate planning step.],
+  [Migrated content generation from a 2-stage Gemini API workflow (strategy then execution) to a 1-stage agent pipeline (Claude Code for NET, OpenCode + GLM-5.1 for MDCAT), producing 765+ structured artifacts (notes, MCQ tests, interactive React/SVG physics labs)],
 )
 
 #entry[
