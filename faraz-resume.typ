@@ -112,7 +112,7 @@ Full-stack software engineer with 5 years building production web and mobile sys
 #entry[
   Lead Full-Stack Engineer
 ][
-  Bitsmiths Studio (Contract)
+  Bitsmiths Studio
 ][
   Remote
 ][
