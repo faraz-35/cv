@@ -1,8 +1,8 @@
-// Faraz Shah - Resume
+// S M Faraz Shah - Resume
 // Single-column, ATS-safe, 2-page. Built in Typst.
 // Edit content in the #let blocks below; layout lives in the styling.
 
-#let name = "Faraz Shah"
+#let name = "S M Faraz Shah"
 #let title = "Full-Stack Software Engineer"
 #let email = "syedfarazshah350@gmail.com"
 #let phone = "+92 343 7732456"
@@ -12,14 +12,14 @@
 #let site = "faraz-35.vercel.app"
 
 // ---- Page setup: US Letter, tight margins, single column ----
-#set document(title: "Faraz Shah — Resume", author: "Faraz Shah")
+#set document(title: "S M Faraz Shah — Resume", author: "S M Faraz Shah")
 #set page(
   paper: "us-letter",
   margin: (top: 0.5in, bottom: 0.55in, left: 0.6in, right: 0.6in),
   footer: context {
     let p = counter(page).get().first()
     if p > 1 {
-      align(center, text(size: 9pt, fill: luma(85))[Faraz Shah — Resume · #p])
+      align(center, text(size: 9pt, fill: luma(85))[S M Faraz Shah — Resume · #p])
     }
   },
 )
@@ -136,7 +136,6 @@ Full-stack software engineer with 5 years building production web and mobile sys
 
 #bullets(
   [Ran a one-person software studio building products for restaurants; built the product prototypes and ran an outbound client pipeline.],
-  [Delivered a 3-month engagement for Baydaar Travels: a travel booking web app — frontend, backend, and deployment.],
   [Completed AWS and IBM certification coursework on Coursera during this period.],
 )
 
@@ -165,14 +164,14 @@ Full-stack software engineer with 5 years building production web and mobile sys
 ]
 
 #bullets(
-  [Led the migration from React to Next.js at Smodin, improving performance and scalability of the core product.],
-  [Built a reusable UI component library to standardize the interface and lift development velocity across the team.],
+  [Migrated complete features from legacy React JS to Next.js and TypeScript.],
+  [Created an in-house UI library to replace MUI (40% performance boost) and upgraded the site UI to the new Figma design.],
 )
 
 #entry[
   Freelance Web Developer
 ][
-  Fiverr / Upwork / PeoplePerHour
+  Fiverr / Upwork / Freelancer
 ][
   Remote
 ][
@@ -184,6 +183,7 @@ Full-stack software engineer with 5 years building production web and mobile sys
   [Appointment app for a skin-care clinic, end-to-end with React.],
   [EdTech learning app for primary students, built with React / React Native.],
   [Facebook Marketplace integration via the Facebook Graph API for a client marketplace product.],
+  [Travel booking web app for Baydaar Travels, end-to-end: frontend, backend, and deployment.],
   ["Rene Icons," an open-source icon library.],
 )
 
