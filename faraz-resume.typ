@@ -219,7 +219,7 @@ Full-stack software engineer with 5 years building production web and mobile sys
 ]
 
 #bullets(
-  [A native macOS task list that writes my journal as a side effect. Per-task timers, reminders, and a command palette. Tauri (Rust) + React + SQLite.],
+  [A hyper-minimal, power-user macOS superapp: tasks, notes, goals, timers, reminders, analytics, and journaling in one, shaped to you via editable appearance and feature toggles in settings. Tauri (Rust) + React + SQLite.],
 )
 
 #entry[
