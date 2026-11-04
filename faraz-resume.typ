@@ -93,7 +93,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Co-Founder & Lead Engineer],
   [Parhako],
-  [Islamabad, Pakistan],
+  none,
   [Sep 2024 – Jul 2026],
   [Set up the frontend and backend repos, the style guide, and the coding conventions.],
   [Managed cloud deployment on AWS: EC2, ASG, ALB, RDS Postgres, later moved to Aurora. Removed the ASG when traffic didn't need it.],
@@ -126,7 +126,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Full-Stack Developer],
   [TopDevSpace (Contract)],
-  [USA],
+  [Remote (USA)],
   [Jan 2023 – Jun 2023],
   [Migrated a .NET stack to AWS serverless: Terraform, NestJS, Lambda, DynamoDB.],
   [Worked with a team on a React JS codebase: UI/UX fixes and enhancements.],
@@ -135,7 +135,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Full-Stack JS Developer],
   [Smodin],
-  [USA],
+  [Remote (USA)],
   [Jun 2022 – Dec 2022],
   [Migrated complete features from legacy React JS to Next.js and TypeScript.],
   [Created an in-house UI library to replace MUI. Got a 40% performance boost.],
@@ -198,7 +198,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
   #skillrow("Backend:", [Node.js, Express, GraphQL, Supabase, Prisma])
   #skillrow("Databases:", [PostgreSQL, DynamoDB])
   #skillrow("DevOps:", [AWS (EC2, Lambda, SAM, ALB, ASG), Terraform, CI/CD])
-  #skillrow("Testing:", [Cypress (end-to-end frontend), Playwright (scraping), Postman/contract schema validation])
+  #skillrow("Testing:", [Cypress (end-to-end frontend), Playwright, Postman schema validation])
 ]
 
 // ============================================================
