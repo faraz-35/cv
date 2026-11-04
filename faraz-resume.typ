@@ -43,7 +43,9 @@
       align: (left, right),
       text(weight: "bold")[#role — #org], text(size: 9.5pt)[#dates],
     )
-    #text(size: 9.5pt, fill: luma(85))[#meta]
+    #if meta != none [
+      #text(size: 9.5pt, fill: luma(85))[#meta]
+    ]
     #v(0.35em)
     #for it in items.pos() {
       par(hanging-indent: 0.5em)[
@@ -91,7 +93,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Co-Founder & Lead Engineer],
   [Parhako],
-  [Islamabad, Pakistan (Remote)],
+  [Islamabad, Pakistan],
   [Sep 2024 – Jul 2026],
   [Set up the frontend and backend repos, the style guide, and the coding conventions.],
   [Managed cloud deployment on AWS: EC2, ASG, ALB, RDS Postgres, later moved to Aurora. Removed the ASG when traffic didn't need it.],
@@ -104,7 +106,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Lead Full-Stack Engineer],
   [Bitsmiths Studio],
-  [Remote],
+  none,
   [Aug 2025 – Oct 2025],
   [Did PR review and QA; ran 1:1 review sessions with engineers for guidance and code quality.],
   [Discussed features directly with clients: technical feasibility, and how to advance their products.],
@@ -114,7 +116,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Founder & Engineer],
   [Lightangle Tech],
-  [Remote],
+  none,
   [Jun 2023 – Aug 2024],
   [Created an automated restaurant site analyzer: feature detection, performance, and UX audits.],
   [Created an automated outreach engine: Google Maps API, Python, LLM API.],
@@ -124,7 +126,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Full-Stack Developer],
   [TopDevSpace (Contract)],
-  [Remote (USA)],
+  [USA],
   [Jan 2023 – Jun 2023],
   [Migrated a .NET stack to AWS serverless: Terraform, NestJS, Lambda, DynamoDB.],
   [Worked with a team on a React JS codebase: UI/UX fixes and enhancements.],
@@ -133,7 +135,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Full-Stack JS Developer],
   [Smodin],
-  [Remote (USA)],
+  [USA],
   [Jun 2022 – Dec 2022],
   [Migrated complete features from legacy React JS to Next.js and TypeScript.],
   [Created an in-house UI library to replace MUI. Got a 40% performance boost.],
@@ -143,7 +145,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 #entry(
   [Full Stack Web and App Developer],
   [Freelance],
-  [Remote],
+  none,
   [Mar 2021 – Jun 2022],
   [Built a React Native Expo app for medical school prep.],
   [Designed and developed an appointment app for skin doctors on the JAM stack.],
