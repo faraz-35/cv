@@ -1,6 +1,6 @@
 // S M Faraz Shah - Resume
 // Single-column, ATS-safe, 2-page. Built in Typst.
-// Edit content in the #let blocks below; layout lives in the styling.
+// Experience + projects copy faraz-35.vercel.app verbatim; resume is the downstream artifact.
 
 #let name = "S M Faraz Shah"
 #let title = "Full-Stack Software Engineer"
@@ -16,49 +16,45 @@
 #set page(
   paper: "us-letter",
   margin: (top: 0.5in, bottom: 0.55in, left: 0.6in, right: 0.6in),
-  footer: context {
-    let p = counter(page).get().first()
-    if p > 1 {
-      align(center, text(size: 9pt, fill: luma(85))[S M Faraz Shah — Resume · #p])
-    }
-  },
 )
 #set text(font: "New Computer Modern", size: 10pt, lang: "en")
-#set par(leading: 0.7em, justify: false, spacing: 0.85em)
+#set par(leading: 0.75em, justify: false, spacing: 0.9em)
 
 // Links keep their destination (clickable in the PDF) but render as plain black text — ATS-safe
 #show link: set text(fill: black)
 
 // ---- Section heading style ----
 #let heading(body) = {
-  v(0.75em)
+  v(1.5em)
   block(width: 100%)[
     #text(weight: "bold", size: 11pt, tracking: 0.5pt, upper(body))
     #v(-0.7em)
     #line(length: 100%, stroke: 0.5pt)
   ]
-  v(0.2em)
+  v(0.4em)
 }
 
-// ---- Job entry: title row + date, then bullets ----
-#let entry(role, org, meta, dates) = {
-  block(width: 100%, spacing: 0.3em)[
+// ---- One entry = one unbreakable unit: title row, meta line, bullets, optional note ----
+#let entry(role, org, meta, dates, ..items, note: none) = {
+  v(0.8em)
+  block(width: 100%, breakable: false, spacing: 0.3em)[
     #grid(
       columns: (1fr, auto),
       align: (left, right),
       text(weight: "bold")[#role — #org], text(size: 9.5pt)[#dates],
     )
     #text(size: 9.5pt, fill: luma(85))[#meta]
-  ]
-}
-
-#let bullets(..items) = {
-  for it in items.pos() {
-    par(hanging-indent: 0.5em)[
-      #h(0.2em)#text[•] #h(0.3em)#it
+    #v(0.35em)
+    #for it in items.pos() {
+      par(hanging-indent: 0.5em)[
+        #h(0.2em)#text[•] #h(0.3em)#it
+      ]
+    }
+    #if note != none [
+      #v(0.2em)
+      #text(size: 9.5pt, fill: luma(85))[#note]
     ]
-  }
-  v(0.5em)
+  ]
 }
 
 // ============================================================
@@ -79,189 +75,106 @@
 #v(0.3em)
 
 // ============================================================
-// SUMMARY
+// SUMMARY  (site hero, plain-text)
 // ============================================================
 
 #heading("Summary")
 
-Full-stack software engineer with 5 years building production web and mobile systems, from idea to owned infrastructure. Co-founded and led engineering at Parhako, an edtech platform of three shipped products serving 2,400+ registered users and 50+ paying customers. Stack: TypeScript, React, Next.js, Node.js, Express, GraphQL, AWS, Supabase.
+I have been building software for 5 years. I designed and built Parhako NET, DayApp and Superpaint. I co-founded Parhako and led its engineering. I led client projects at Bitsmiths and worked on a team at Smodin.
 
 // ============================================================
-// EXPERIENCE
+// EXPERIENCE  (site copy, verbatim)
 // ============================================================
 
 #heading("Experience")
 
-#entry[
-  Lead Software Engineer
-][
-  Parhako
-][
-  Islamabad, Pakistan (Remote)
-][
-  Sep 2024 – Jul 2026
-]
-
-#bullets(
-  [Co-founded Parhako and led 3 engineers and an intern on parhako.com; designed, built, and ran Parhako NET and Parhako MDCAT end-to-end myself — three production apps serving 2,400+ registered users with 50+ paying customers (Next.js + TypeScript, Node.js on AWS).],
-  [Owned cloud infrastructure and deployment on AWS (EC2, Load Balancer, Auto Scaling Groups, CI/CD).],
-  [Built the MCQ filter builder and analytics engine over a bank of 43,000+ MCQs; candidates have taken 2,500+ mock tests and 50,000+ practice attempts.],
-  [Migrated content generation from a 2-stage Gemini API workflow (strategy then execution) to a 1-stage agent pipeline (Claude Code for NET, OpenCode + GLM-5.1 for MDCAT), producing 765+ structured artifacts (notes, MCQ tests, interactive React/SVG physics labs).],
+#entry(
+  [Co-Founder & Lead Engineer],
+  [Parhako],
+  [Islamabad, Pakistan (Remote)],
+  [Sep 2024 – Jul 2026],
+  [Set up the frontend and backend repos, the style guide, and the coding conventions.],
+  [Managed cloud deployment on AWS: EC2, ASG, ALB, RDS Postgres, later moved to Aurora. Removed the ASG when traffic didn't need it.],
+  [Designed the blueprint based agentic pipeline that generated the platform content: tests, practice sets, and notes.],
+  [Managed data and site security: auth, validation, databases reachable only through an SSH tunnel, scripted backups.],
+  [2,400+ students used the platform, 50+ of them paying.],
+  note: [parhako.com · Parhako NET · Parhako MDCAT],
 )
 
-#entry[
-  Lead Full-Stack Engineer
-][
-  Bitsmiths Studio
-][
-  Remote
-][
-  Aug 2025 – Oct 2025
-]
-
-#bullets(
-  [Delivered end-to-end features across the product using React, TypeScript, and Supabase.],
-  [Improved engineering workflows through code reviews and tooling, and advised junior engineers.],
+#entry(
+  [Lead Full-Stack Engineer],
+  [Bitsmiths Studio],
+  [Remote],
+  [Aug 2025 – Oct 2025],
+  [Did PR review and QA; ran 1:1 review sessions with engineers for guidance and code quality.],
+  [Discussed features directly with clients: technical feasibility, and how to advance their products.],
+  [Managed client infrastructure on Coolify and Supabase.],
 )
 
-#entry[
-  Founder
-][
-  Lightangle Tech
-][
-  Remote
-][
-  Jun 2023 – Aug 2024
-]
-
-#bullets(
-  [Ran a one-person software studio building products for restaurants; built the product prototypes and ran an outbound client pipeline.],
-  [Completed AWS and IBM certification coursework on Coursera during this period.],
+#entry(
+  [Founder & Engineer],
+  [Lightangle Tech],
+  [Remote],
+  [Jun 2023 – Aug 2024],
+  [Created an automated restaurant site analyzer: feature detection, performance, and UX audits.],
+  [Created an automated outreach engine: Google Maps API, Python, LLM API.],
+  [Built online ordering, delivery management, and inventory systems for restaurants.],
 )
 
-#entry[
-  Full-Stack Developer
-][
-  TopDevSpace (Contract)
-][
-  Remote (USA)
-][
-  Jan 2023 – Jun 2023
-]
-
-#bullets(
-  [Led migration of a legacy .NET application to AWS serverless using Terraform, NestJS, AWS Lambda, Step Functions, DynamoDB, and CloudWatch — owning the backend rewrite and replacing fragile synchronous flows with event-driven, observable pipelines.],
+#entry(
+  [Full-Stack Developer],
+  [TopDevSpace (Contract)],
+  [Remote (USA)],
+  [Jan 2023 – Jun 2023],
+  [Migrated a .NET stack to AWS serverless: Terraform, NestJS, Lambda, DynamoDB.],
+  [Worked with a team on a React JS codebase: UI/UX fixes and enhancements.],
 )
 
-#entry[
-  Full-Stack JS Developer
-][
-  Smodin
-][
-  Remote (USA)
-][
-  Jun 2022 – Dec 2022
-]
-
-#bullets(
+#entry(
+  [Full-Stack JS Developer],
+  [Smodin],
+  [Remote (USA)],
+  [Jun 2022 – Dec 2022],
   [Migrated complete features from legacy React JS to Next.js and TypeScript.],
-  [Created an in-house UI library to replace MUI (40% performance boost) and upgraded the site UI to the new Figma design.],
+  [Created an in-house UI library to replace MUI. Got a 40% performance boost.],
+  [Upgraded the site UI to the new Figma design.],
 )
 
-#entry[
-  Freelance Web Developer
-][
-  Fiverr / Upwork / Freelancer
-][
-  Remote
-][
-  Mar 2021 – Jun 2022
-]
-
-#bullets(
-  [Business management web app — meeting scheduling and invoice management, built with React.],
-  [Appointment app for a skin-care clinic, end-to-end with React.],
-  [EdTech learning app for primary students, built with React / React Native.],
-  [Facebook Marketplace integration via the Facebook Graph API for a client marketplace product.],
-  [Travel booking web app for Baydaar Travels, end-to-end: frontend, backend, and deployment.],
-  ["Rene Icons," an open-source icon library.],
+#entry(
+  [Full Stack Web and App Developer],
+  [Freelance],
+  [Remote],
+  [Mar 2021 – Jun 2022],
+  [Built a React Native Expo app for medical school prep.],
+  [Designed and developed an appointment app for skin doctors on the JAM stack.],
+  [Integrated Facebook Graph API and Marketplace functionality into an existing backend.],
+  [Developed an ed tech app for primary students.],
+  [Developed a business management web app: meeting scheduling and invoice management.],
+  [Shipped a travel booking app for Baydaar Travels.],
+  [Created Rene Icons, an open-source icon library.],
+  note: [Fiverr · Upwork · Freelancer],
 )
 
 // ============================================================
-// PROJECTS
+// PROJECTS  (site copy: only the two shipped-for-others apps)
 // ============================================================
 
-#pagebreak(weak: true)
 #heading("Projects")
 
-#entry[
-  Application Filler
-][
-  #link("https://github.com/faraz-35/application-filler")[github.com/faraz-35/application-filler]
-][
-  Personal
-][
-  2026
-]
-
-#bullets(
-  [Fills form fields and answers questions for you, in your voice, from a context profile. Focus a field and it writes a paste-ready answer; the browser-extension mode fills a whole form at once. Node, Firefox MV3, Hammerspoon, opencode.],
+#entry(
+  [DayApp],
+  [#link("https://getdayapp.vercel.app")[getdayapp.vercel.app] · #link("https://github.com/faraz-35/dayapp")[github.com/faraz-35/dayapp]],
+  [Rust, Tauri 2, React, SQLite],
+  [2026],
+  [A hyper-minimal, power-user macOS superapp: tasks, notes, goals, timers, reminders, analytics, and journaling in one, shaped to you via editable appearance and feature toggles in settings.],
 )
 
-#entry[
-  DayApp
-][
-  #link("https://github.com/faraz-35/dayapp")[github.com/faraz-35/dayapp]
-][
-  Personal
-][
-  2026
-]
-
-#bullets(
-  [A hyper-minimal, power-user macOS superapp: tasks, notes, goals, timers, reminders, analytics, and journaling in one, shaped to you via editable appearance and feature toggles in settings. Tauri (Rust) + React + SQLite.],
-)
-
-#entry[
-  Writing Partner
-][
-  #link("https://github.com/faraz-35/writing")[github.com/faraz-35/writing]
-][
-  Personal
-][
-  2026
-]
-
-#bullets(
-  [A writing assistant that refuses to write for you. It reads your draft and flags contradictions and gaps so you fix them yourself, keeping the thinking yours. Swift macOS app + Firefox extension + opencode agent.],
-)
-
-#entry[
-  Five Lessons
-][
-  #link("https://github.com/faraz-35/five-lessons")[github.com/faraz-35/five-lessons]
-][
-  Personal
-][
-  2026
-]
-
-#bullets(
-  [An Android app for 5-minute math and CS lessons, each written by an AI teacher. Next.js + Tailwind static export in Capacitor; lessons generated by an LLM agent pipeline.],
-)
-
-#entry[
-  Musical
-][
-  #link("https://github.com/faraz-35/musical")[github.com/faraz-35/musical]
-][
-  Personal
-][
-  2026
-]
-
-#bullets(
-  [Singable English subtitles for YouTube songs: translates the lyrics line by line and times them to the music so they can be sung along, shown as a browser overlay. Python (FastAPI, yt-dlp, GLM) + Firefox extension.],
+#entry(
+  [Superpaint],
+  [#link("https://getsuperpaint.vercel.app")[getsuperpaint.vercel.app] · #link("https://github.com/faraz-35/superpaint")[github.com/faraz-35/superpaint]],
+  [Swift, AppKit],
+  [2026],
+  [Overlay canvas for the Mac — draw over any app, then let clicks pass through.],
 )
 
 // ============================================================
@@ -275,16 +188,16 @@ Full-stack software engineer with 5 years building production web and mobile sys
   #body
 ]
 
-#skillrow("Languages:", [TypeScript, JavaScript, Python, SQL]) \
-#skillrow("Frontend:", [React, Next.js, React Native Expo, Tailwind CSS, TanStack Query]) \
-#skillrow("Backend:", [Node.js, NestJS, Express, GraphQL, Supabase]) \
-#skillrow("Databases:", [PostgreSQL, DynamoDB, Firebase, Prisma, Neon]) \
-#skillrow("Testing:", [Cypress (end-to-end frontend), Playwright (scraping), Postman/contract schema validation]) \
-#skillrow(
-  "Cloud / DevOps:",
-  [AWS (EC2, Lambda, SAM, CloudWatch, Load Balancer, Auto Scaling), Terraform, CI/CD],
-) \
-#skillrow("Practices:", [System design, infrastructure-as-code, monorepo architecture])
+// Rows live in their own tighter-spacing scope so section gaps stay generous
+#[
+  #set par(spacing: 0.65em)
+  #skillrow("Languages:", [TypeScript, JavaScript, Python, SQL])
+  #skillrow("Frontend:", [React, Next.js, React Native Expo, Tailwind CSS, TanStack Query])
+  #skillrow("Backend:", [Node.js, Express, GraphQL, Supabase, Prisma])
+  #skillrow("Databases:", [PostgreSQL, DynamoDB])
+  #skillrow("DevOps:", [AWS (EC2, Lambda, SAM, ALB, ASG), Terraform, CI/CD])
+  #skillrow("Testing:", [Cypress (end-to-end frontend), Playwright (scraping), Postman/contract schema validation])
+]
 
 // ============================================================
 // EDUCATION
@@ -292,15 +205,12 @@ Full-stack software engineer with 5 years building production web and mobile sys
 
 #heading("Education")
 
-#entry[
-  Bachelor of Science in Software Engineering
-][
-  National University of Sciences and Technology (NUST)
-][
-  Islamabad, Pakistan
-][
-  2019 – 2023
-]
+#entry(
+  [Bachelor of Engineering in Software Engineering],
+  [National University of Sciences and Technology (NUST)],
+  [Islamabad, Pakistan],
+  [2019 – 2023],
+)
 
 // ============================================================
 // CERTIFICATIONS
