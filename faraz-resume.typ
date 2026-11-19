@@ -95,7 +95,7 @@
 
 #heading("Summary")
 
-Full-stack engineer with 5 years of shipped work in TypeScript, React, and Node. Co-founded Parhako, an entrance-test prep platform, and led its engineering from idea to 2,500+ students. Led client projects at Bitsmiths and worked with teams at Smodin and TopDevSpace. Builds AI agents and native productivity apps.
+Full-stack engineer with 5 years of shipped work in TypeScript, React, and Node. Co-founded Parhako, an entrance-test prep platform, and led its engineering from idea to 2,500+ students. Led client projects at Bitsmiths and worked with teams at Smodin and TopDevSpace. Builds AI agents and productivity apps on the side.
 
 // ============================================================
 // EXPERIENCE  (site copy, verbatim)
