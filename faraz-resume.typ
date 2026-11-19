@@ -1,6 +1,6 @@
 // S M Faraz Shah - Resume
 // Single-column, ATS-safe, 2-page. Built in Typst.
-// Experience + projects copy faraz-35.vercel.app verbatim; resume is the downstream artifact.
+// Summary is resume-specific (the site hero keeps its own pitch); experience + projects copy faraz-35.vercel.app.
 
 #let name = "S M Faraz Shah"
 #let title = "Full-Stack Software Engineer"
@@ -24,33 +24,46 @@
 #show link: set text(fill: black)
 
 // ---- Section heading style ----
-#let heading(body) = {
+// `gap` = space from the rule to the body. Paragraph bodies already contribute
+// ~0.9em of par-spacing above themselves; entry blocks contribute none, so
+// entry-led sections pass a larger `gap` to land at the same visual distance.
+#let heading(body, gap: 0.1em) = {
   v(1.5em)
   block(width: 100%)[
     #text(weight: "bold", size: 11pt, tracking: 0.5pt, upper(body))
     #v(-0.7em)
     #line(length: 100%, stroke: 0.5pt)
   ]
-  v(0.4em)
+  v(gap)
 }
 
 // ---- One entry = one unbreakable unit: title row, meta line, bullets, optional note ----
+// Inter-entry spacing is `entry_gap`, inserted between entries at the call site — not
+// here, so the first entry sits at the header's own gap like every other section body.
+#let entry_gap = v(1.4em)
+#let row_gap = v(0.9em)
+
 #let entry(role, org, meta, dates, ..items, note: none) = {
-  v(0.8em)
+  let its = items.pos()
   block(width: 100%, breakable: false, spacing: 0.3em)[
     #grid(
       columns: (1fr, auto),
       align: (left, right),
-      text(weight: "bold")[#role — #org], text(size: 9.5pt)[#dates],
+      text(weight: "bold")[#role#if org != none [ — #org]], text(size: 9.5pt)[#dates],
     )
     #if meta != none [
       #text(size: 9.5pt, fill: luma(85))[#meta]
     ]
     #v(0.35em)
-    #for it in items.pos() {
-      par(hanging-indent: 0.5em)[
-        #h(0.2em)#text[•] #h(0.3em)#it
-      ]
+    // A single item is a description line; multiple items render as bullets
+    #if its.len() == 1 [
+      #its.first()
+    ] else {
+      for it in its {
+        par(hanging-indent: 0.5em)[
+          #h(0.2em)#text[•] #h(0.3em)#it
+        ]
+      }
     }
     #if note != none [
       #v(0.2em)
@@ -82,55 +95,63 @@
 
 #heading("Summary")
 
-I have been building software for 5 years. I designed and built Parhako NET, DayApp and Superpaint. I co-founded Parhako and led its engineering. I led client projects at Bitsmiths and worked on a team at Smodin.
+Full-stack engineer with 5 years of shipped work in TypeScript, React, and Node. Co-founded Parhako, an entrance-test prep platform, and led its engineering from idea to 2,500+ students. Led client projects at Bitsmiths and worked with teams at Smodin and TopDevSpace. Builds AI agents and native productivity apps.
 
 // ============================================================
 // EXPERIENCE  (site copy, verbatim)
 // ============================================================
 
-#heading("Experience")
+#heading("Experience", gap: 0.7em)
 
 #entry(
   [Co-Founder & Lead Engineer],
   [Parhako],
   none,
-  [Sep 2024 – Jul 2026],
-  [Set up the frontend and backend repos, the style guide, and the coding conventions.],
-  [Managed cloud deployment on AWS: EC2, ASG, ALB, RDS Postgres, later moved to Aurora. Removed the ASG when traffic didn't need it.],
-  [Designed the blueprint based agentic pipeline that generated the platform content: tests, practice sets, and notes.],
-  [Managed data and site security: auth, validation, databases reachable only through an SSH tunnel, scripted backups.],
-  [2,400+ students used the platform, 50+ of them paying.],
-  note: [parhako.com · Parhako NET · Parhako MDCAT],
+  [Sep 2024 – Sep 2026],
+  [Led a team of 3 on parhako.com, setting up repos, coding conventions, and the style guide; served 2,500+ students and 50+ paying customers.],
+  [Built the Parhako NET monorepo containing a Next.js TypeScript frontend, Node.js backend, Next.js admin panel, Terraform infrastructure, and AWS deployment scripts.],
+  [Designed the blueprint-based agentic pipeline that generated the platform's content: 11,000+ questions across tests, practice sets, and notes.],
+  [Ran production on AWS: EC2, ALB and RDS Postgres.],
+  [Enhanced SEO by rendering content as static HTML behind accordions, and by fixing internal linking, canonicals, and sitemaps.],
 )
+
+#entry_gap
 
 #entry(
   [Lead Full-Stack Engineer],
   [Bitsmiths Studio],
   none,
   [Aug 2025 – Oct 2025],
-  [Did PR review and QA; ran 1:1 review sessions with engineers for guidance and code quality.],
-  [Discussed features directly with clients: technical feasibility, and how to advance their products.],
+  [Reviewed PRs, ran QA, and held 1:1 sessions with the engineers on code quality.],
+  [Advised clients directly on technical feasibility and product direction.],
+  [Implemented features using Next.js, TypeScript, and Supabase.],
   [Managed client infrastructure on Coolify and Supabase.],
 )
+
+#entry_gap
 
 #entry(
   [Founder & Engineer],
   [Lightangle Tech],
   none,
-  [Jun 2023 – Aug 2024],
-  [Created an automated restaurant site analyzer: feature detection, performance, and UX audits.],
-  [Created an automated outreach engine: Google Maps API, Python, LLM API.],
-  [Built online ordering, delivery management, and inventory systems for restaurants.],
+  [Jul 2023 – Aug 2024],
+  [Built an automated restaurant site analyzer: feature detection, performance, and UX audits.],
+  [Wrote an automated outreach engine: Google Maps API, Python, LLM API.],
+  [Delivered online ordering, delivery management, and inventory systems for restaurants.],
 )
+
+#entry_gap
 
 #entry(
   [Full-Stack Developer],
-  [TopDevSpace (Contract)],
+  [TopDevSpace],
   [Remote (USA)],
   [Jan 2023 – Jun 2023],
   [Migrated a .NET stack to AWS serverless: Terraform, NestJS, Lambda, DynamoDB.],
-  [Worked with a team on a React JS codebase: UI/UX fixes and enhancements.],
+  [On a team, shipped UI/UX fixes and enhancements to a React JS codebase.],
 )
+
+#entry_gap
 
 #entry(
   [Full-Stack JS Developer],
@@ -138,45 +159,57 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
   [Remote (USA)],
   [Jun 2022 – Dec 2022],
   [Migrated complete features from legacy React JS to Next.js and TypeScript.],
-  [Created an in-house UI library to replace MUI. Got a 40% performance boost.],
-  [Upgraded the site UI to the new Figma design.],
+  [Created an in-house UI library to replace MUI, improving site performance by 40%.],
+  [Implemented the Figma redesign across the site.],
 )
+
+#entry_gap
 
 #entry(
   [Full Stack Web and App Developer],
   [Freelance],
   none,
   [Mar 2021 – Jun 2022],
-  [Built a React Native Expo app for medical school prep.],
-  [Designed and developed an appointment app for skin doctors on the JAM stack.],
-  [Integrated Facebook Graph API and Marketplace functionality into an existing backend.],
-  [Developed an ed tech app for primary students.],
-  [Developed a business management web app: meeting scheduling and invoice management.],
-  [Shipped a travel booking app for Baydaar Travels.],
+  [Built a React Native Expo app for medical school prep, with video playback for course content.],
+  [Designed and developed an appointment app for dermatologists on the JAMstack.],
+  [Integrated Facebook Graph API and Marketplace into an ecommerce backend.],
+  [Developed a business web app with Zoom for meetings and Stripe Connect for invoicing.],
+  [Shipped a travel booking app for Baydaar Travels: React and Node, an admin panel, deployed on AWS and Netlify.],
   [Created Rene Icons, an open-source icon library.],
-  note: [Fiverr · Upwork · Freelancer],
 )
 
 // ============================================================
 // PROJECTS  (site copy: only the two shipped-for-others apps)
 // ============================================================
 
-#heading("Projects")
+#heading("Projects", gap: 0.7em)
 
 #entry(
   [DayApp],
-  [#link("https://getdayapp.vercel.app")[getdayapp.vercel.app] · #link("https://github.com/faraz-35/dayapp")[github.com/faraz-35/dayapp]],
-  [Rust, Tauri 2, React, SQLite],
-  [2026],
-  [A hyper-minimal, power-user macOS superapp: tasks, notes, goals, timers, reminders, analytics, and journaling in one, shaped to you via editable appearance and feature toggles in settings.],
+  none,
+  none,
+  [#link("https://getdayapp.vercel.app")[getdayapp.vercel.app]],
+  [A cross-platform desktop app for Mac, Windows, and Linux: tasks, notes, goals, timers, reminders, analytics, and journaling in one window. Built with Rust, Tauri 2, React, and SQLite.],
 )
+
+#entry_gap
 
 #entry(
   [Superpaint],
-  [#link("https://getsuperpaint.vercel.app")[getsuperpaint.vercel.app] · #link("https://github.com/faraz-35/superpaint")[github.com/faraz-35/superpaint]],
-  [Swift, AppKit],
-  [2026],
-  [Overlay canvas for the Mac — draw over any app, then let clicks pass through.],
+  none,
+  none,
+  [#link("https://getsuperpaint.vercel.app")[getsuperpaint.vercel.app]],
+  [A native Mac app that turns the whole desktop into a canvas with one hotkey: draw over any app, then flip to browse mode and the ink stays while clicks pass through. Built in Swift with AppKit.],
+)
+
+#entry_gap
+
+#entry(
+  [Chess Engine],
+  none,
+  none,
+  [#link("https://github.com/faraz-35/chess-engine")[github.com/faraz-35/chess-engine]],
+  [A chess app for the Mac: play against Stockfish or Maia, with every move graded and a post-game review of your mistakes. Built with TypeScript and Python.],
 )
 
 // ============================================================
@@ -190,14 +223,18 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
   #body
 ]
 
-// Rows live in their own tighter-spacing scope so section gaps stay generous
+// Row gaps are explicit spacers so their spacing can't leak above the first row
 #[
-  #set par(spacing: 0.65em)
   #skillrow("Languages:", [TypeScript, JavaScript, Python, SQL])
+  #row_gap
   #skillrow("Frontend:", [React, Next.js, React Native Expo, Tailwind CSS, TanStack Query])
+  #row_gap
   #skillrow("Backend:", [Node.js, Express, GraphQL, Supabase, Prisma])
-  #skillrow("Databases:", [PostgreSQL, DynamoDB])
+  #row_gap
+  #skillrow("Databases:", [PostgreSQL, MongoDB, SQLite, Microsoft SQL Server, DynamoDB])
+  #row_gap
   #skillrow("DevOps:", [AWS (EC2, Lambda, SAM, ALB, ASG), Terraform, CI/CD])
+  #row_gap
   #skillrow("Testing:", [Cypress (end-to-end frontend), Playwright, Postman schema validation])
 ]
 
@@ -205,7 +242,7 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 // EDUCATION
 // ============================================================
 
-#heading("Education")
+#heading("Education", gap: 0.7em)
 
 #entry(
   [Bachelor of Engineering in Software Engineering],
@@ -220,7 +257,9 @@ I have been building software for 5 years. I designed and built Parhako NET, Day
 
 #heading("Certifications")
 
-AWS Cloud Solutions Architect, DevOps on AWS (Coursera); IBM Full Stack Software Developer (Coursera); Meta Front-End Developer, Meta React Native (Coursera).
+- AWS Cloud Solutions Architect, DevOps on AWS
+- IBM Full Stack Software Developer
+- Meta Front-End Developer, Meta React Native
 
 // ============================================================
 // LANGUAGES
